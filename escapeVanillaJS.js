@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("solveRoom2").addEventListener("click", () => {
-    const jsConcepts = new Set(["closure", "scope", "hoisting"]);
-    // 🪲 Bug: What's mssing from JS concepts?
+    const jsConcepts = new Set(["closure", "scope", "hoisting", "async"]);
+    // 🪲 Bug: What's mssing from JS concepts? *
     const reactConcepts = new Set(["components", "jsx", "hooks", "async"]);
     // 🪲 Bug: Incorrect function call *
     const commonConcepts = findIntersection(jsConcepts, reactConcepts);
@@ -54,7 +54,7 @@ function findIntersection(setA, setB) {
 
 async function navigateLabyrinth(directions) {
   for (let direction of directions) {
-    // 🪲 Bug: No delay
+    // 🪲 Bug: No delay *
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log(`Navigating: ${direction.step}`);
   }
