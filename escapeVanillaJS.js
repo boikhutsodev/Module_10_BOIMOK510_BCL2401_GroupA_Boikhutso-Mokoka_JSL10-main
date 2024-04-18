@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jsConcepts = new Set(["closure", "scope", "hoisting"]);
     // 🪲 Bug: What's mssing from JS concepts?
     const reactConcepts = new Set(["components", "jsx", "hooks", "async"]);
-    // 🪲 Bug: Incorrect function call
+    // 🪲 Bug: Incorrect function call *
     const commonConcepts = findIntersection(jsConcepts, reactConcepts);
     document.getElementById(
       "room2Result"
@@ -49,8 +49,7 @@ function findMostRecentBook(books) {
 
 function findIntersection(setA, setB) {
   // 🪲 Bug: Incorrect logic
-  const intersection = new Set([...setA]);
-  return intersection;
+  return new Set([...setA].filter((element) => setB.has(element)));
 }
 
 async function navigateLabyrinth(directions) {
