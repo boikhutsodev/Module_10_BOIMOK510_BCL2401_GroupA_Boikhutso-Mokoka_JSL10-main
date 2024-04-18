@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((response) => response.json())
       .then((books) => {
         const mostRecentBook = findMostRecentBook(books);
-        // 🪲 Bug: Incorrect element ID
+        // 🪲 Bug: Incorrect element ID *
         document.getElementById(
           "room1Result"
         ).textContent = `The key to the next room is: ${mostRecentBook.title}`;
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((directions) => {
         navigateLabyrinth(directions).then((message) => {
           // 🪲 Bug: Incorrect method
-          document.getElementById("room3Result").innerHTML = message;
+          document.getElementById("room3Result").textContent = message;
         });
       });
   });
