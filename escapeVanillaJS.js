@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 🪲 Bug: Incorrect ID used for attaching the event listener *
   document.getElementById("solveRoom1").addEventListener("click", () => {
     fetch("books.json")
       .then((response) => response.json())
       .then((books) => {
         const mostRecentBook = findMostRecentBook(books);
-        // 🪲 Bug: Incorrect element ID *
         document.getElementById(
           "room1Result"
         ).textContent = `The key to the next room is: ${mostRecentBook.title}`;
@@ -14,9 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("solveRoom2").addEventListener("click", () => {
     const jsConcepts = new Set(["closure", "scope", "hoisting", "async"]);
-    // 🪲 Bug: What's mssing from JS concepts? *
     const reactConcepts = new Set(["components", "jsx", "hooks", "async"]);
-    // 🪲 Bug: Incorrect function call *
     const commonConcepts = findIntersection(jsConcepts, reactConcepts);
     document.getElementById(
       "room2Result"
@@ -25,13 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ).join(", ")}`;
   });
 
-  // 🪲 Bug: Asynchronous function ?
   document.getElementById("solveRoom3").addEventListener("click", () => {
     fetch("directions.json")
       .then((response) => response.json())
       .then((directions) => {
         navigateLabyrinth(directions).then((message) => {
-          // 🪲 Bug: Incorrect method *
           document.getElementById("room3Result").textContent = message;
         });
       });
@@ -48,13 +42,11 @@ function findMostRecentBook(books) {
 }
 
 function findIntersection(setA, setB) {
-  // 🪲 Bug: Incorrect logic *
   return new Set([...setA].filter((element) => setB.has(element)));
 }
 
 async function navigateLabyrinth(directions) {
   for (let direction of directions) {
-    // 🪲 Bug: No delay *
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log(`Navigating: ${direction.step}`);
   }
