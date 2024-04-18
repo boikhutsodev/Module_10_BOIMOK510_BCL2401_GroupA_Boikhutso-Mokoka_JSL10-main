@@ -19,7 +19,7 @@ Short description or introduction to your project.
 To run this project locally, follow these steps:
 
 1. Clone this repository to your local machine:
-   git clone [https://github.com/your-username/escape-vanilla-js-challenge.git]
+   git clone [https://github.com/mariusmokoka/Module_10_BOIMOK510_BCL2401_GroupA_Boikhutso-Mokoka_JSL10-main.git]
 
 2. Navigate to the project directory:
    cd escape-vanilla-js-challenge
